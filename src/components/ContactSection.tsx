@@ -88,7 +88,7 @@ const ContactSection = () => {
             <div className="glass-card p-6 glow-border">
               <div className="flex items-center gap-3 text-muted-foreground">
                 <MapPin size={18} className="text-primary" />
-                <span>Vellore, Tamil Nadu, India</span>
+                <span>Nagpur, Maharashtra, India</span>
               </div>
             </div>
           </div>
