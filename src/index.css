@@ -190,3 +190,7 @@
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--primary) / 0.5);
 }
+
+#lovable-badge {
+  display: none !important;
+}
