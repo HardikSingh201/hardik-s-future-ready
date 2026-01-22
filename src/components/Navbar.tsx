@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const navLinks = [
@@ -9,6 +9,9 @@ const navLinks = [
   { name: 'Projects', href: '#projects' },
   { name: 'Contact', href: '#contact' },
 ];
+
+// Replace this with your actual resume URL or file path
+const RESUME_URL = '/resume.pdf';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -66,7 +69,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden pt-4 pb-6 animate-fade-up">
+          <div className="pt-4 pb-6 animate-fade-up">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <a
@@ -78,8 +81,11 @@ const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <Button variant="outline" size="sm" className="w-fit" asChild>
-                <a href="#contact" onClick={() => setIsOpen(false)}>Contact</a>
+              <Button variant="outline" size="sm" className="w-fit gap-2" asChild>
+                <a href={RESUME_URL} target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>
+                  <FileText size={16} />
+                  Resume
+                </a>
               </Button>
             </div>
           </div>
