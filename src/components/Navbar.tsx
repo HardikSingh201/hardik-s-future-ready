@@ -62,7 +62,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="pt-4 pb-6 animate-fade-up">
+          <div className="pt-4 pb-6 animate-fade-up bg-background/95 backdrop-blur-xl rounded-lg mt-2 border border-border/50">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <a
