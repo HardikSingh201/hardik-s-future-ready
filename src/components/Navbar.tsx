@@ -45,9 +45,13 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <Button variant="outline" size="sm" asChild>
-              <a href="#contact">Contact</a>
-            </Button>
+            <button
+              className="text-muted-foreground hover:text-foreground transition-colors"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
