@@ -37,7 +37,7 @@ const Navbar = () => {
             Hardik<span className="text-primary">.</span>
           </a>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation - only nav links */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
@@ -48,18 +48,11 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <button
-              className="text-muted-foreground hover:text-foreground transition-colors"
-              onClick={() => setIsOpen(!isOpen)}
-              aria-label="Toggle menu"
-            >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Hamburger Menu Button - visible on all screens */}
           <button
-            className="md:hidden text-foreground"
+            className="text-foreground hover:text-primary transition-colors"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
