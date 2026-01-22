@@ -62,8 +62,8 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="pt-4 pb-6 animate-fade-up bg-background/95 backdrop-blur-xl rounded-lg mt-2 border border-border/50">
-            <div className="flex flex-col gap-4">
+          <div className="fixed inset-0 top-16 flex items-center justify-center bg-background/95 backdrop-blur-xl animate-fade-up z-40">
+            <div className="flex flex-col items-center gap-6">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
