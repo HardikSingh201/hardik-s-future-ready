@@ -74,7 +74,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="fixed inset-0 flex items-center justify-center bg-[hsl(222,47%,6%)] z-[100]">
+          <div className="fixed inset-0 flex items-center justify-center z-[100]" style={{ backgroundColor: 'hsl(220 20% 4%)' }}>
             {/* Close button */}
             <button
               className="absolute top-6 right-6 text-foreground hover:text-primary transition-colors"
