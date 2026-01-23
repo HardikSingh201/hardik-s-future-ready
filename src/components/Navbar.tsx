@@ -74,7 +74,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="fixed inset-0 top-0 flex items-center justify-center bg-background z-40">
+          <div className="fixed inset-0 flex items-center justify-center bg-background z-[100]">
             {/* Close button */}
             <button
               className="absolute top-6 right-6 text-foreground hover:text-primary transition-colors"
