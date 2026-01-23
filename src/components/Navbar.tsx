@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { Menu, X, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -71,10 +72,17 @@ const Navbar = () => {
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
+      </div>
 
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="fixed inset-0 flex items-center justify-center z-[100]" style={{ backgroundColor: 'hsl(220 20% 4%)' }}>
+      {/* Mobile Navigation (Portal) */}
+      {isOpen &&
+        typeof document !== 'undefined' &&
+        createPortal(
+          <div
+            className="fixed inset-0 z-[1000] flex items-center justify-center bg-background"
+            role="dialog"
+            aria-modal="true"
+          >
             {/* Close button */}
             <button
               className="absolute top-6 right-6 text-foreground hover:text-primary transition-colors"
@@ -83,7 +91,7 @@ const Navbar = () => {
             >
               <X size={32} />
             </button>
-            
+
             <div className="flex flex-col items-center gap-8">
               {navLinks.map((link) => (
                 <a
@@ -102,9 +110,9 @@ const Navbar = () => {
                 </a>
               </Button>
             </div>
-          </div>
+          </div>,
+          document.body,
         )}
-      </div>
     </nav>
   );
 };
